@@ -36,10 +36,11 @@ namespace Tanks2D {
       Vector2 nearestLocation = new Vector2();
       float shortestDistance = 999999f; // dummy distance
       for (int j = 0; j < adjacentCells.Length; j++) {
-        // TODO: allow to travel in same direction as long as possible (to avoid zigzag / diagonal path)
-        if ((j == 0) || (shortestDistance > Vector2.Distance(adjacentCells[j], destination))) {
+        float dist = Mathf.Abs(adjacentCells[j].x - destination.x) + Mathf.Abs(adjacentCells[j].y - destination.y);
+        
+        if ((j == 0) || (shortestDistance > dist)) {
           nearestLocation = adjacentCells[j];
-          shortestDistance = Vector2.Distance(nearestLocation, destination);
+          shortestDistance = dist;
         }
       }
 

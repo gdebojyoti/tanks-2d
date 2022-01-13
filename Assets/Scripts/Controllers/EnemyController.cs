@@ -42,12 +42,11 @@ public class EnemyController : MonoBehaviour {
   }
 
   private void _MoveTowardsDestination () {
-    // determine current position
-    Vector2 pos = transform.position;
     // calculate distance from nextCellLocation
-    float dist = Vector2.Distance(pos, nextCellLocation);
+    float dist = Vector2.Distance(transform.position, nextCellLocation);
     // if distance less than limit, update nextCellLocation
-    if (dist < .1) {
+    if (dist < .02) {
+      transform.position = new Vector2(Mathf.Round(transform.position.x), Mathf.Round(transform.position.y));
       _GetNextCellLocation();
     }
     // move towards nextCellLocation
@@ -55,12 +54,12 @@ public class EnemyController : MonoBehaviour {
   }
 
   private void _GetNextCellLocation () {
+    
     Vector2 newLocation = Utilities.GetNextCellLocation(transform.position, currentDirection, destination);
 
     Vector2 n = newLocation - nextCellLocation;
     n.Normalize();
     n = new Vector2(Mathf.Round(n.x), Mathf.Round(n.y));
-    Debug.Log("normalized" + (n == new Vector2(1f, 0)));
     if (n == new Vector2(1f, 0)) {
       currentDirection = Direction.Right;
     } else if (n == new Vector2(-1f, 0)) {
