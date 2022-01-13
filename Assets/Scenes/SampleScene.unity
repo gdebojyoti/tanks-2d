@@ -598,7 +598,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destination: {x: 0, y: 0}
-  nextCellLocation: {x: -6, y: 3}
+  nextCellLocation: {x: 0, y: 0}
   currentDirection: 0
   moveSpeed: 2
   canMove: 0

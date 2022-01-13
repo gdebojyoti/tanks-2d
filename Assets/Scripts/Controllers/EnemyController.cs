@@ -5,7 +5,7 @@ using Tanks2D;
 public class EnemyController : MonoBehaviour {
   // public Vector2 spawnLocation;
   public Vector2 destination; // target destination that enemy has to reach
-  public Vector2 nextCellLocation = new Vector2(-6, 3);
+  public Vector2 nextCellLocation;
   public Direction currentDirection;
   public float moveSpeed = 2f;
   public bool canMove = false; // wait for .2s to prevent the jerk at the start
@@ -15,6 +15,7 @@ public class EnemyController : MonoBehaviour {
     Debug.Log("Enemy spawned!" + transform.position);
     currentDirection = Direction.Down; // set direction to Down
     transform.localRotation = Quaternion.Euler(0,0,180); // update enemy icon
+    nextCellLocation = transform.position;
   }
 
   private void Awake() {
