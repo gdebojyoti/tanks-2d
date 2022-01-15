@@ -54,8 +54,8 @@ public class EnemyController : MonoBehaviour {
     _MoveTowardsNextCell();
   }
 
+  // determine next cell location, current direction, and set rotation
   private void _GetNextCellLocation () {
-    
     Vector2 newLocation = Utilities.GetNextCellLocation(transform.position, currentDirection, destination);
 
     Vector2 n = newLocation - nextCellLocation;
