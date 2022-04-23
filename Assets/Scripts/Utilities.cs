@@ -16,18 +16,22 @@ namespace Tanks2D {
       Vector2[] adjacentCells = new Vector2[3];
       int i = 0;
       if (currentDirection != Direction.Up) {
+        // add cell which is below currentCellLocation
         adjacentCells[i] = new Vector2 (currentCellLocation.x, currentCellLocation.y - 1);
         i++;
       }
       if (currentDirection != Direction.Down) {
+        // add cell which is above currentCellLocation
         adjacentCells[i] = new Vector2 (currentCellLocation.x, currentCellLocation.y + 1);
         i++;
       }
       if (currentDirection != Direction.Left) {
+        // add cell which is to the right of currentCellLocation
         adjacentCells[i] = new Vector2 (currentCellLocation.x + 1, currentCellLocation.y);
         i++;
       }
       if (currentDirection != Direction.Right) {
+        // add cell which is to the left of currentCellLocation
         adjacentCells[i] = new Vector2 (currentCellLocation.x - 1, currentCellLocation.y);
         i++;
       }
@@ -36,7 +40,8 @@ namespace Tanks2D {
       Vector2 nearestLocation = new Vector2();
       float shortestDistance = 999999f; // dummy distance
       for (int j = 0; j < adjacentCells.Length; j++) {
-        float dist = Mathf.Abs(adjacentCells[j].x - destination.x) + Mathf.Abs(adjacentCells[j].y - destination.y);
+        // float dist = Mathf.Abs(adjacentCells[j].x - destination.x) + Mathf.Abs(adjacentCells[j].y - destination.y);
+        float dist = (adjacentCells[j] - destination).magnitude;
         
         if ((j == 0) || (shortestDistance > dist)) {
           nearestLocation = adjacentCells[j];
