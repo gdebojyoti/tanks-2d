@@ -1,0 +1,24 @@
+.button {
+    background-color: rgb(46, 204, 113);
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    height: 30px;
+    width: 100px;
+    color: rgb(255, 255, 255);
+    transition-property: translate;
+    transition-duration: 0.2s;
+}
+
+.button--alert {
+    background-color: rgb(211, 84, 0);
+}
+
+.button:hover {
+    translate: 2px 0;
+}

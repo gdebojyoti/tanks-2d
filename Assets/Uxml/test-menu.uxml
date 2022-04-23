@@ -1,0 +1,10 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/Uxml/test.uss?fileID=7433441132597879392&amp;guid=bd1960b84ea96f04dbd01ea046cd79d0&amp;type=3#test" />
+    <ui:VisualElement name="body" style="height: 100%; background-color: rgba(0, 0, 0, 0.73); justify-content: center; align-items: center; width: 100%; display: none;">
+        <ui:VisualElement name="popup" style="width: 400px; height: auto; background-color: rgb(255, 255, 255); padding-left: 0; padding-right: 0; padding-top: 40px; padding-bottom: 40px; border-top-left-radius: 30px; border-bottom-left-radius: 30px; border-top-right-radius: 30px; border-bottom-right-radius: 30px; align-items: center;">
+            <ui:Label text="Main Menu" display-tooltip-when-elided="true" name="title" style="-unity-font: none; font-size: 30px; -unity-text-align: upper-center; -unity-font-style: bold;" />
+            <ui:Button text="Resume" display-tooltip-when-elided="true" name="resume" class="button" style="margin-left: 0; margin-right: 0; margin-top: 30px; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;" />
+            <ui:Button text="Exit" display-tooltip-when-elided="true" name="exit" class="button button--alert" style="margin-left: 0; margin-right: 0; margin-top: 20px; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
